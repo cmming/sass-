@@ -1,0 +1,188 @@
+// *{margin:0;padding:0;}
+@for $i from 1 through 6
+  {
+    #menu:checked ~ .items li:nth-child(#{$i}) {
+      display: inline-block;
+    // #menu:checked .items li:nth-child(#{$i}) {
+      -webkit-animation-name: appear-#{$i};
+      -webkit-animation-duration: 240ms;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-fill-mode: forwards;
+      // -webkit-animation-delay: 20ms;
+    }
+    #menu:not(:checked) ~ .items li:nth-child(#{$i}) {
+    // #menu:not(:checked) .items li:nth-child(#{$i}) {
+      display: none;
+      -webkit-animation-name: disappear-#{$i};
+      -webkit-animation-duration: 240ms;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-fill-mode: forwards;
+    
+    }
+  }
+
+
+// 竖屏 的时候 进行整体旋转
+@media only screen and (orientation: portrait) {
+  .circle-container{
+    left:10px;
+  }
+  @for $i from 1 through 6
+  {
+    // 出现的动画
+    @-webkit-keyframes appear-#{$i} {
+      0% {
+        // 起点一样
+        top:0;
+        // -webkit-transform: translate(-36px, 0) rotateZ(270deg);
+        // -webkit-animation-timing-function: cubic-bezier(1, 0.6, 0.57, 0.75);
+      }
+      100% {
+        top:-75px-75px*$i;
+        left:24px;
+        // 最终显示的点的位置
+        // -webkit-transform: translate((350px-45*$i),0);
+        // -webkit-transform: translate(148px-26*$i,-(350px-45*$i));
+      }
+    }
+  //   // 消失的动画
+    @-webkit-keyframes disappear-#{$i} {
+      0% {
+        top:-75px-45px*$i;
+        left:24px;
+        // -webkit-transform: translate((350px-45*$i),0) rotateZ(0deg);
+        // -webkit-transform: translate(-36px,-(350px-45*$i)) rotateZ(0deg);
+        // -webkit-animation-timing-function: cubic-bezier(1, 0.6, 0.57, 0.75);
+      }
+      100% {
+        // -webkit-transform: translate(0, 0) rotateZ(540deg);
+        // -webkit-transform: translate(-36px, 0) rotateZ(0deg);
+        top:0;
+      }
+    }
+  }
+}
+
+/* 全景（横屏）模式 */
+@media screen and (orientation: landscape) {
+  .circle-container{
+    bottom: 10px;
+  }
+  @for $i from 1 through 5
+  {
+    // 出现的动画
+    @-webkit-keyframes appear-#{$i} {
+      0% {
+        // 起点一样
+        top:0;
+        // -webkit-transform: translate(0, 0) rotateZ(270deg);
+        // -webkit-animation-timing-function: cubic-bezier(1, 0.6, 0.57, 0.75);
+      }
+      100% {
+        bottom:23px+29px*$i;
+        left:35px+45px*$i;
+        // 最终显示的点的位置
+        // -webkit-transform: translate((300px-45*$i),0);
+        // -webkit-transform: translate(0,-(350px-45*$i));
+      }
+    }
+  //   // 消失的动画
+    @-webkit-keyframes disappear-#{$i} {
+      0% {
+        bottom:48px;
+        left:35px+45px*$i;
+        // -webkit-transform: translate((300px-45*$i),0) rotateZ(0deg);
+        // -webkit-transform: translate(0,-(350px-45*$i)) rotateZ(0deg);
+        // -webkit-animation-timing-function: cubic-bezier(1, 0.6, 0.57, 0.75);
+      }
+      100% {
+        top:0;
+        // -webkit-transform: translate(0, 0) rotateZ(540deg);
+      }
+    }
+  }
+}
+
+ul{list-style:none;margin:0;padding:0;}
+.menu{
+  @include clearfix;
+}
+.menu-container{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:50px;
+  height:50px;
+  // @include clearfix;
+}
+.circle-container{
+  // position:absolute;
+  position: relative;
+	// bottom:10px;
+	// left:10px;
+	width:50px;
+	height:50px;
+	box-shadow:0 0 10px rgba(0,0,0,0.7);
+	border-radius:25px;
+}
+.display-none{
+  display: none;
+}
+.circle{
+	width:40px;
+	height:40px;
+	position:absolute;
+	top:5px;
+	left:5px;
+	text-align:center;
+	font-size:30px;
+  line-height:40px;
+  z-index: 100001;
+	color:#fff;
+	cursor:pointer;
+	border-radius:20px;
+	// background-image:-webkit-linear-gradient(#E85738, #CB2C16);
+	background-image:-webkit-linear-gradient(#dfdfdf, #dfdfdf);
+	-webkit-transform: rotate(45deg);
+	-webkit-transform-style:preserve-3d;
+	-webkit-transition: all 0.2s linear;
+}
+.circle:active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left:0;
+  bottom:0;
+  right:0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none; 
+  -webkit-border-radius: 20px;
+}
+.menu-container .items{
+  height:0;
+}
+.items li{
+  // position: fixed;
+  position: relative;
+  z-index: 1000;
+	// bottom: 22px;
+  // left: 22px;
+  // left:10px;
+  // top:0;
+	display: block;
+	height: 26px;
+	width: 26px;
+	color: white;
+	text-align: center;
+	line-height: 26px;
+	font-size: 18px;
+	background-image: -webkit-linear-gradient(#433f3c, #44403d);
+	-webkit-box-shadow: 0 0 0 4px #fff, 0 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 0 1px black, 0 0 0 5px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 13px;
+	-webkit-transform-style: preserve-3d;
+}
+
+
+
+

@@ -1,0 +1,111 @@
+//框架的 脚手脚
+// 将所有的元素的 盒子模型设置为 border-box 诡异模式
+.container * {
+    @include box-sizing(border-box);
+  }
+  .container *:before,
+  .container *:after {
+@include box-sizing(border-box);
+}
+
+html {
+    font-size: 10px;
+    // 当用户点击iOS的Safari浏览器中的链接或JavaScript的可点击的元素时，覆盖显示的高亮颜色。
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+  
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $body-bg;
+}
+// 重置相关字体
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+// 锚点
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus {
+    @include tab-focus;
+  }
+}
+
+
+figure,.no-margin {
+  margin: 0;
+}
+
+// 可以去掉图片 底部的3像素
+img {
+  vertical-align: middle;
+}
+// 响应 图片
+.img-responsive{
+  @include img-responsive;
+}
+
+// 图片相框
+.img-rounded{
+  border-radius: $border-radius-large;
+}
+
+.img-thumbnail {
+  padding: $thumbnail-padding;
+  line-height: $line-height-base;
+  background-color: $thumbnail-bg;
+  border: 1px solid $thumbnail-border;
+  border-radius: $thumbnail-border-radius;
+  @include transition(all .2s ease-in-out);
+
+  // Keep them at most 100% wide
+  @include img-responsive(inline-block);
+}
+
+// 圆形图片
+.img-circle{
+  border-radius: 50%;
+}
+
+// 下划线样式
+hr {
+  margin-top:    $line-height-computed;
+  margin-bottom: $line-height-computed;
+  border: 0;
+  border-top: 1px solid $hr-border;
+}
+
+// 使用场景为：一些没有文字的图标，残疾人不知道这个按钮的作用，所有丹徒添加一个标签
+// 隐藏一个元素
+// https://a11yproject.com/posts/how-to-hide-content/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+[role="button"] {
+  cursor: pointer;
+}

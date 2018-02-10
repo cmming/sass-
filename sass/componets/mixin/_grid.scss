@@ -1,0 +1,17 @@
+// 创建容器 样式
+@mixin container-fixed($gutter:$grid-gutter-width){
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: ($gutter/2);
+    padding-right: ($gutter/2);
+    @include clearfix;
+}
+
+
+//创建行 row
+
+@mixin make-row($gutter:$grid-gutter-width){
+    margin-left:  ceil(($gutter / -2));
+    margin-right: floor(($gutter / -2));
+    @include clearfix;
+}

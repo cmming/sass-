@@ -1,0 +1,417 @@
+@charset "UTF-8";
+/* line 4, ../sass/componets/menu.scss */
+#menu:checked ~ .items li:nth-child(1) {
+  display: inline-block;
+  -webkit-animation-name: appear-1;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 13, ../sass/componets/menu.scss */
+#menu:not(:checked) ~ .items li:nth-child(1) {
+  display: none;
+  -webkit-animation-name: disappear-1;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 4, ../sass/componets/menu.scss */
+#menu:checked ~ .items li:nth-child(2) {
+  display: inline-block;
+  -webkit-animation-name: appear-2;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 13, ../sass/componets/menu.scss */
+#menu:not(:checked) ~ .items li:nth-child(2) {
+  display: none;
+  -webkit-animation-name: disappear-2;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 4, ../sass/componets/menu.scss */
+#menu:checked ~ .items li:nth-child(3) {
+  display: inline-block;
+  -webkit-animation-name: appear-3;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 13, ../sass/componets/menu.scss */
+#menu:not(:checked) ~ .items li:nth-child(3) {
+  display: none;
+  -webkit-animation-name: disappear-3;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 4, ../sass/componets/menu.scss */
+#menu:checked ~ .items li:nth-child(4) {
+  display: inline-block;
+  -webkit-animation-name: appear-4;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 13, ../sass/componets/menu.scss */
+#menu:not(:checked) ~ .items li:nth-child(4) {
+  display: none;
+  -webkit-animation-name: disappear-4;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 4, ../sass/componets/menu.scss */
+#menu:checked ~ .items li:nth-child(5) {
+  display: inline-block;
+  -webkit-animation-name: appear-5;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 13, ../sass/componets/menu.scss */
+#menu:not(:checked) ~ .items li:nth-child(5) {
+  display: none;
+  -webkit-animation-name: disappear-5;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 4, ../sass/componets/menu.scss */
+#menu:checked ~ .items li:nth-child(6) {
+  display: inline-block;
+  -webkit-animation-name: appear-6;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 13, ../sass/componets/menu.scss */
+#menu:not(:checked) ~ .items li:nth-child(6) {
+  display: none;
+  -webkit-animation-name: disappear-6;
+  -webkit-animation-duration: 240ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@media only screen and (orientation: portrait) {
+  /* line 27, ../sass/componets/menu.scss */
+  .circle-container {
+    left: 10px;
+  }
+
+  @-webkit-keyframes appear-1 {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -150px;
+      left: 24px;
+    }
+  }
+  @-webkit-keyframes disappear-1 {
+    0% {
+      top: -120px;
+      left: 24px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes appear-2 {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -225px;
+      left: 24px;
+    }
+  }
+  @-webkit-keyframes disappear-2 {
+    0% {
+      top: -165px;
+      left: 24px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes appear-3 {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -300px;
+      left: 24px;
+    }
+  }
+  @-webkit-keyframes disappear-3 {
+    0% {
+      top: -210px;
+      left: 24px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes appear-4 {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -375px;
+      left: 24px;
+    }
+  }
+  @-webkit-keyframes disappear-4 {
+    0% {
+      top: -255px;
+      left: 24px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes appear-5 {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -450px;
+      left: 24px;
+    }
+  }
+  @-webkit-keyframes disappear-5 {
+    0% {
+      top: -300px;
+      left: 24px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes appear-6 {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -525px;
+      left: 24px;
+    }
+  }
+  @-webkit-keyframes disappear-6 {
+    0% {
+      top: -345px;
+      left: 24px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+}
+/* 全景（横屏）模式 */
+@media screen and (orientation: landscape) {
+  /* line 68, ../sass/componets/menu.scss */
+  .circle-container {
+    bottom: 10px;
+  }
+
+  @-webkit-keyframes appear-1 {
+    0% {
+      top: 0;
+    }
+    100% {
+      bottom: 52px;
+      left: 80px;
+    }
+  }
+  @-webkit-keyframes disappear-1 {
+    0% {
+      bottom: 48px;
+      left: 80px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes appear-2 {
+    0% {
+      top: 0;
+    }
+    100% {
+      bottom: 81px;
+      left: 125px;
+    }
+  }
+  @-webkit-keyframes disappear-2 {
+    0% {
+      bottom: 48px;
+      left: 125px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes appear-3 {
+    0% {
+      top: 0;
+    }
+    100% {
+      bottom: 110px;
+      left: 170px;
+    }
+  }
+  @-webkit-keyframes disappear-3 {
+    0% {
+      bottom: 48px;
+      left: 170px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes appear-4 {
+    0% {
+      top: 0;
+    }
+    100% {
+      bottom: 139px;
+      left: 215px;
+    }
+  }
+  @-webkit-keyframes disappear-4 {
+    0% {
+      bottom: 48px;
+      left: 215px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  @-webkit-keyframes appear-5 {
+    0% {
+      top: 0;
+    }
+    100% {
+      bottom: 168px;
+      left: 260px;
+    }
+  }
+  @-webkit-keyframes disappear-5 {
+    0% {
+      bottom: 48px;
+      left: 260px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+}
+/* line 106, ../sass/componets/menu.scss */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, ../sass/bootstrap/mixins/_clearfix.scss */
+.menu:before, .menu:after {
+  content: " ";
+  display: table;
+}
+/* line 19, ../sass/bootstrap/mixins/_clearfix.scss */
+.menu:after {
+  clear: both;
+}
+
+/* line 110, ../sass/componets/menu.scss */
+.menu-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+/* line 118, ../sass/componets/menu.scss */
+.circle-container {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  border-radius: 25px;
+}
+
+/* line 128, ../sass/componets/menu.scss */
+.display-none {
+  display: none;
+}
+
+/* line 131, ../sass/componets/menu.scss */
+.circle {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
+  z-index: 100001;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 20px;
+  background-image: -webkit-linear-gradient(#dfdfdf, #dfdfdf);
+  -webkit-transform: rotate(45deg);
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: all 0.2s linear;
+}
+
+/* line 150, ../sass/componets/menu.scss */
+.circle:active:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  -webkit-border-radius: 20px;
+}
+
+/* line 162, ../sass/componets/menu.scss */
+.menu-container .items {
+  height: 0;
+}
+
+/* line 165, ../sass/componets/menu.scss */
+.items li {
+  position: relative;
+  z-index: 1000;
+  display: block;
+  height: 26px;
+  width: 26px;
+  color: white;
+  text-align: center;
+  line-height: 26px;
+  font-size: 18px;
+  background-image: -webkit-linear-gradient(#433f3c, #44403d);
+  -webkit-box-shadow: 0 0 0 4px #fff, 0 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 0 1px black, 0 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 13px;
+  -webkit-transform-style: preserve-3d;
+}

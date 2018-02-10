@@ -1,0 +1,19 @@
+// https://www.w3cplus.com/css/understanding-block-formatting-contexts-in-css.html
+// 清除浮动同时避免出现margin-top 偏移 函数(同时属于一个BFC（块级格式化上下文）就会产生外边距折叠)，所以为了消除边距折叠，就可以产生一个BFC来消除
+// 父选择器 &表示父选择器
+
+// content 为空格是为了避免欧鹏浏览器的一种错误。否则他会导致空间出现在被清除的元素的顶部或底部。
+// 当目录属性包含在文档中的其他位置时，空间内容是避免Opera错误的一种方法。否则，它会导致空间出现在被清除的元素的顶部和底部
+
+// 使用table 而不使用block 是因为block会产生高度.
+
+@mixin clearfix(){
+    &:before,
+    &:after{
+        content: ' ';
+        display: table;
+    }
+    &:after{
+        clear: both;
+    }
+}

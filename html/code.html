@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>code 的样式</title>
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+</head>
+
+<body>
+        <div class="container">  
+                <h1 class="page-header">代码<small>的使用</small></h1>  
+                <p>Bootstrap是基于<code>HTML5</code>和<code>CSS3</code>开发的，它在jQuery的基础上进行了更为个性化和人性化的完善，形成一套自己独有的网站风格，并兼容大部分jQuery插件。</p>  
+                <pre>  
+                    <xml>  
+                        <ToUserName>mycreate</ToUserName>  
+                        <FromUserName>wx5823bf96d3bd56c7</FromUserName>  
+                        <CreateTime>1348831860</CreateTime>  
+                        <MsgType>text</MsgType>  
+                        <Content>this is a test</Content>  
+                        <MsgId>1234567890123456</MsgId>  
+                        <AgentID>128</AgentID>  
+                    </xml>  
+                </pre>  
+                <pre>  
+                        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();  
+                        DocumentBuilder db = dbf.newDocumentBuilder();  
+                        StringReader sr = new StringReader(sMsg);  
+                        InputSource is = new InputSource(sr);  
+                        Document document = db.parse(is);  
+              
+                        Element root = document.getDocumentElement();  
+                        NodeList nodelist1 = root.getElementsByTagName("Content");  
+                        String Content = nodelist1.item(0).getTextContent();  
+                        System.out.println("Content：" + Content);  
+                </pre>  
+                  
+            </div>  
+
+</body>
+
+</html>

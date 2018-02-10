@@ -1,0 +1,59 @@
+//1. 创建容器 样式
+// 不同屏幕下宽度不同，内容居中，内边距15px;
+.container{
+    // 居中 
+    @include container-fixed;
+    
+    // 不同屏幕下的宽度
+    @media (min-width:$screen-sm-min) {
+        width: $container-sm;
+    }
+    @media (min-width:$screen-md-min) {
+        width: $container-md;
+    }
+    @media (min-width:$screen-lg-min) {
+        width: $container-lg;
+    }
+}
+
+
+// 流式盒子，没有固定宽度
+
+.container-fulid{
+    @include container-fixed;
+}
+
+
+// 创建row 样式
+.row{
+    @include make-row;
+}
+
+// 栅格化 模块
+
+
+// 生成列
+@include make-grid-columns;
+
+
+@media (min-width: $screen-sm-min) {
+    @include make-grid(sm);
+  }
+  
+  
+  // Medium grid
+  //
+  // Columns, offsets, pushes, and pulls for the desktop device range.
+  
+  @media (min-width: $screen-md-min) {
+    @include make-grid(md);
+  }
+  
+  
+  // Large grid
+  //
+  // Columns, offsets, pushes, and pulls for the large desktop device range.
+  
+  @media (min-width: $screen-lg-min) {
+    @include make-grid(lg);
+  }

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义的菜单</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+</style>
+<body>
+    <div class="menu-container">
+        <!-- 控制区域 -->
+        <label for="menu">
+            <input type="checkbox" id="menu" class="menuControl display-none">
+            <div class="circle-container">
+                <div class="circle">✖</div>
+            </div>
+            <ul class="items">
+                <!-- home -->
+                <li>
+                    <i>
+                        <svg t="1517987408473" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2803"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22">
+                            <defs>
+                                <style type="text/css"></style>
+                            </defs>
+                            <path d="M954.548208 488.928538 552.555671 86.934978c-12.276604-12.277628-28.5308-19.155269-45.766346-19.368116-0.275269-0.00307-0.548492-0.005117-0.822738-0.005117-17.124006 0-33.134655 6.594185-45.160549 18.62008L68.384483 478.604402c-8.086166 8.086166-8.086166 21.195741 0 29.280884 8.086166 8.086166 21.194718 8.085142 29.280884 0L490.087944 115.463732c4.26207-4.261047 10.031471-6.567579 16.191774-6.488785 6.367011 0.077771 12.403494 2.650363 16.995069 7.241938l401.99356 401.992537c4.042059 4.043083 9.341762 6.064113 14.640442 6.064113 5.298679 0 10.598382-2.02103 14.640442-6.064113C962.634374 510.123256 962.634374 497.013681 954.548208 488.928538z"
+                                p-id="2804" fill="#ffffff"></path>
+                            <path d="M884.131439 556.832068c-11.434423 0-20.705578 9.269108-20.705578 20.704554l0 312.38366c0 12.890588-8.676613 23.779589-18.945491 23.779589L647.036509 913.699871c-11.435447 0-20.705578 9.270131-20.705578 20.705578 0 11.435447 9.270131 20.704554 20.705578 20.704554l197.443861 0c33.280987 0 60.356646-29.244045 60.356646-65.189721L904.837017 577.535599C904.835993 566.101175 895.565862 556.832068 884.131439 556.832068z"
+                                p-id="2805" fill="#ffffff"></path>
+                            <path d="M610.585319 735.320205 392.919904 735.320205c-11.435447 0-20.704554 9.270131-20.704554 20.705578l0 133.8945c0 12.890588-7.656377 23.779589-16.718777 23.779589L169.144328 913.699871c-9.0624 0-16.718777-10.890025-16.718777-23.779589L152.425551 577.535599c0-11.435447-9.270131-20.704554-20.704554-20.704554s-20.704554 9.269108-20.704554 20.704554l0 312.38366c0 35.945677 26.075889 65.189721 58.127885 65.189721l186.352245 0c32.051997 0 58.127885-29.244045 58.127885-65.189721L413.624459 776.730337l196.960861 0c11.435447 0 20.704554-9.270131 20.704554-20.705578C631.289873 744.590336 622.020766 735.320205 610.585319 735.320205z"
+                                p-id="2806" fill="#ffffff"></path>
+                        </svg>
+                    </i>
+                </li>
+                <!-- back -->
+                <li>
+                    <i class="iconfont">
+                        <svg t="1517987356024" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2657"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24">
+                            <defs>
+                                <style type="text/css"></style>
+                            </defs>
+                            <path d="M932.039565 483.875452 163.745365 483.875452l350.590843-311.627437c11.008728-9.784854 12.000312-26.6428 2.215458-37.651528-9.7869-11.005658-26.63973-11.999288-37.652552-2.214435L74.241888 492.064972c-5.693676 5.062296-8.950859 12.31549-8.950859 19.934005s3.257184 14.871709 8.950859 19.934005l404.65825 359.684966c5.080715 4.51585 11.405771 6.735401 17.708314 6.735401 7.352455 0 14.675234-3.022847 19.944238-8.950859 9.784854-11.008728 8.79327-27.865651-2.215458-37.652552L160.472831 537.214265l771.566734 0c14.729469 0 26.669406-11.94096 26.669406-26.669406C958.708971 495.815389 946.769035 483.875452 932.039565 483.875452z"
+                                p-id="2658" fill="#ffffff"></path>
+                        </svg>
+                    </i>
+                </li>
+                <!-- clearn -->
+                <li>
+                    <i>
+                        <svg t="1517987286870" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2509"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="26">
+                            <defs>
+                                <style type="text/css"></style>
+                            </defs>
+                            <path d="M192 880h640v16H192zM176 512h16v384h-16zM832 512h16v384h-16zM592 368h288v16H592zM880 368h16v128h-16zM128 496h768v16H128zM128 368h16v128h-16zM144 368h288v16H144zM432 128h16v256h-16z"
+                                p-id="2510" fill="#ffffff"></path>
+                            <path d="M432 128h160v16H432z" p-id="2511" fill="#ffffff"></path>
+                            <path d="M576 128h16v256h-16zM432 640h16v240h-16zM576 640h16v240h-16zM704 640h16v240h-16zM304 640h16v240h-16z" p-id="2512"
+                                fill="#ffffff"></path>
+                        </svg>
+                    </i>
+                </li>
+                <!-- plus -->
+                <li>
+                    <i>
+                        <svg t="1517987042544" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1691"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="26">
+                            <defs>
+                                <style type="text/css"></style>
+                            </defs>
+                            <path d="M512 0C229.691077 0 0 229.671385 0 512s229.691077 512 512 512 512-229.671385 512-512S794.308923 0 512 0z m0 984.615385C251.411692 984.615385 39.384615 772.588308 39.384615 512S251.411692 39.384615 512 39.384615s472.615385 212.027077 472.615385 472.615385-212.027077 472.615385-472.615385 472.615385z"
+                                fill="#ffffff" p-id="1692"></path>
+                            <path d="M758.153846 492.307692H531.692308V275.692308a19.692308 19.692308 0 1 0-39.384616 0v216.615384H265.846154a19.692308 19.692308 0 1 0 0 39.384616H492.307692v236.307692a19.692308 19.692308 0 1 0 39.384616 0V531.692308h226.461538a19.692308 19.692308 0 1 0 0-39.384616z"
+                                fill="#ffffff" p-id="1693"></path>
+                        </svg>
+                    </i>
+
+                </li>
+                <!-- delete -->
+                <li>
+                    <i>
+                        <svg t="1517987241024" class="icon" style="" viewBox="0 0 1028 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2362"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="26.1015625" height="26">
+                            <defs>
+                                <style type="text/css"></style>
+                            </defs>
+                            <path d="M515.863273 1024c-282.321455 0-512-229.678545-512-512 0-282.298182 229.678545-512 512-512s512 229.701818 512 512C1027.863273 794.321455 798.184727 1024 515.863273 1024zM515.863273 44.520727C258.094545 44.520727 48.384 254.231273 48.384 512s209.710545 467.502545 467.479273 467.502545S983.342545 769.768727 983.342545 512 773.632 44.520727 515.863273 44.520727z"
+                                p-id="2363" fill="#ffffff"></path>
+                            <path d="M750.126545 531.549091c-4.026182 4.002909-9.565091 6.516364-15.732364 6.516364L298.449455 538.065455c-12.311273 0-22.272-9.960727-22.272-22.272 0-12.288 9.960727-22.248727 22.248727-22.248727l435.968 0c12.334545-0.023273 22.295273 9.937455 22.272 22.248727C756.689455 521.960727 754.176 527.522909 750.126545 531.549091z"
+                                p-id="2364" fill="#ffffff"></path>
+                        </svg>
+                    </i>
+
+                </li>
+
+            </ul>
+        </label>
+    </div>
+</body>
+</html>
+<script>
+    var cont = $(".menu-container");
+    var contW = $(".menu-container").width();
+    var contH = $(".menu-container").height();
+    var startX, startY, sX, sY, moveX, moveY;
+    var winW = $(window).width();
+    var winH = $(window).height()
+    
+    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+    $(window).on(evt,
+    function () {
+        var orientation = window.orientation;
+        if (orientation==90||orientation==-90) {
+            cont.css({
+                "left": 0,
+                "bottom": '30%',
+            })
+            if(winH>winW){
+                var temp = winW;
+                winW = winH
+                winH = winW
+            }
+            
+        }else{
+            cont.css({
+            "left": '0',
+            "bottom":'30%',
+            })
+            if(winH<winW){
+                var temp = winW;
+                winW = winH
+                winH = winW
+            }
+        }
+        $('#menu').attr('checked',false);
+       
+    })
+
+    cont.on({//绑定事件
+        touchstart: function (e) {
+            // $('.items li').hide()              
+            startX = e.originalEvent.targetTouches[0].pageX;    //获取点击点的X坐标    
+            startY = e.originalEvent.targetTouches[0].pageY;    //获取点击点的Y坐标
+            //console.log("startX="+startX+"************startY="+startY);
+            sX = $(this).offset().left;//相对于当前窗口X轴的偏移量
+            sY = $(this).offset().top;//相对于当前窗口Y轴的偏移量
+            //console.log("sX="+sX+"***************sY="+sY);
+            leftX = startX - sX;//鼠标所能移动的最左端是当前鼠标距div左边距的位置
+            rightX = winW - contW + leftX;//鼠标所能移动的最右端是当前窗口距离减去鼠标距div最右端位置
+            topY = startY - sY;//鼠标所能移动最上端是当前鼠标距div上边距的位置
+            bottomY = winH - contH + topY;//鼠标所能移动最下端是当前窗口距离减去鼠标距div最下端位置                
+        },
+        touchmove: function (e) {
+            e.preventDefault();
+            moveX = e.originalEvent.targetTouches[0].pageX;//移动过程中X轴的坐标
+            moveY = e.originalEvent.targetTouches[0].pageY;//移动过程中Y轴的坐标
+            //console.log("moveX="+moveX+"************moveY="+moveY);
+            if (moveX < leftX) { moveX = leftX; }
+            if (moveX > rightX) { moveX = rightX; }
+            if (moveY < topY) { moveY = topY; }
+            if (moveY > bottomY) { moveY = bottomY; }
+            $(this).css({
+                "left": moveX + sX - startX,
+                "top": moveY + sY - startY,
+            })
+        },
+
+    })
+
+    
+
+    
+</script>

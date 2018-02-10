@@ -1,0 +1,11 @@
+// Text overflow
+// Requires inline-block or block for proper styling
+
+@mixin text-overflow() {
+  // 超出部分隐藏
+  overflow: hidden;
+  // 文本溢出使用省略号代替 只能针对一行
+  text-overflow: ellipsis;
+  // 文本不会进行换行
+  white-space: nowrap;
+}

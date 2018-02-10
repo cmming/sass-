@@ -1,0 +1,87 @@
+// 栅格化 系统
+// 创建栅格的 列
+/**
+*$i:定义class 起始 序号
+*$list:表示一次性支持的class
+*/
+@mixin make-grid-columns($i:1,$list:".col-xs-#{$i},.col-sm-#{$i},.col-md-#{$i},.col-lg-#{$i}"){
+    // 使用循环构建 多个 class
+    @for $i from 1 through $grid-columns{
+        $list:"#{$list},.col-xs-#{$i},.col-sm-#{$i},.col-md-#{$i},.col-lg-#{$i}"
+    }
+    #{$list}{
+        position: relative;
+        // 防止内容为空的时候塌陷
+        min-height: 1px;
+        padding-left: $grid-gutter-width/2;
+        padding-right: $grid-gutter-width/2;
+    }
+}
+
+// 循环生成所有的列的浮动
+@mixin float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
+    @for $i from (1 + 1) through $grid-columns {
+      $list: "#{$list}, .col-#{$class}-#{$i}";
+    }
+    #{$list} {
+      float: left;
+    }
+  }
+
+
+// 计算所有的列的宽度，偏移
+  @mixin calc-grid-column($index, $class, $type) {
+    @if ($type == width) and ($index > 0) {
+      .col-#{$class}-#{$index} {
+        width: percentage(($index / $grid-columns));
+      }
+    }
+    // push 是将该部分不右移
+    @if ($type == push) and ($index > 0) {
+      .col-#{$class}-push-#{$index} {
+        left: percentage(($index / $grid-columns));
+      }
+    }
+    @if ($type == push) and ($index == 0) {
+      .col-#{$class}-push-0 {
+        left: auto;
+      }
+    }
+    // pull是将块 左移
+    @if ($type == pull) and ($index > 0) {
+      .col-#{$class}-pull-#{$index} {
+        right: percentage(($index / $grid-columns));
+      }
+    }
+    @if ($type == pull) and ($index == 0) {
+      .col-#{$class}-pull-0 {
+        right: auto;
+      }
+    }
+    //块 偏移
+    @if ($type == offset) {
+      .col-#{$class}-offset-#{$index} {
+        margin-left: percentage(($index / $grid-columns));
+      }
+    }
+  }
+  
+  @mixin loop-grid-columns($columns, $class, $type) {
+    @for $i from 0 through $columns {
+      @include calc-grid-column($i, $class, $type);
+    }
+  }
+
+// Create grid for specific class
+@mixin make-grid($class) {
+    // 所有列的 浮动实现行内块的转变
+    @include float-grid-columns($class);
+    // 宽度
+    @include loop-grid-columns($grid-columns, $class, width);
+    // 做偏移 使用 float 实现 不会占用宽度
+    @include loop-grid-columns($grid-columns, $class, pull);
+    // 右偏移 使用 float 完成 不会占用宽度
+    @include loop-grid-columns($grid-columns, $class, push);
+    // 使用margin 偏移，会占用宽度
+    @include loop-grid-columns($grid-columns, $class, offset);
+  }
