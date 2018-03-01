@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>菜单demo</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="app">
+        <div id="menu" class="treebox">
+            <ul class="menu">
+                <li class="level1">
+                    <a href="#none">
+                        <em class="ico ico1"></em>导航一
+                        <i class="down"></i>
+                    </a>
+                    <ul class="level2">
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="level1">
+                    <a href="#none">
+                        <em class="ico ico2"></em>导航一
+                        <i></i>
+                    </a>
+                    <ul class="level2">
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="level1">
+                    <a href="#none">
+                        <em class="ico ico3"></em>导航一
+                        <i></i>
+                    </a>
+                    <ul class="level2">
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="level1">
+                    <a href="#none">
+                        <em class="ico ico4"></em>导航一
+                        <i></i>
+                    </a>
+                    <ul class="level2">
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="level1">
+                    <a href="#none">
+                        <em class="ico ico5"></em>导航一
+                        <i></i>
+                    </a>
+                    <ul class="level2">
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">导航选项</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <div class="header">
+                
+            </div>
+            <div class="nav-bar"></div>
+            <div class="app-main"></div>
+        </div>
+    </div>
+
+
+</body>
+<script src="http://www.17sucai.com/preview/110037/2016-08-15/web/scripts/jquery1.8.3.min.js"></script>
+<script src="http://www.17sucai.com/preview/110037/2016-08-15/web/scripts/easing.js"></script>
+<script>
+    //等待dom元素加载完毕.
+    $(function () {
+        $(".treebox .level1>a").click(function () {
+            if (!$(this).hasClass('current')) {
+                $(this).addClass('current')   //给当前元素添加"current"样式
+                    .find('i').addClass('down')   //小箭头向下样式
+                    .parent().next().slideDown('slow', 'easeOutQuad')  //下一个元素显示
+                    .parent().siblings().children('a').removeClass('current')//父元素的兄弟元素的子元素去除"current"样式
+                    .find('i').removeClass('down').parent().next().slideUp('slow', 'easeOutQuad');//隐藏
+            } else {
+                $(this).removeClass('current')
+                    .find('i').removeClass('down').parent().next().slideUp('slow', 'easeOutQuad');
+            }
+            return false; //阻止默认时间
+        });
+    })
+</script>
+
+</html>
